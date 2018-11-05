@@ -1,0 +1,33 @@
+.scraper {
+    background: linear-gradient(65deg, $dark-indigo 0, $indigo 100%);
+    color: #fff;
+    h1 {
+        margin: 0;
+    }
+    input {
+        padding: 15px 20px;
+        border-radius: 10px;
+        font-size: 1.5em;
+        font-family: "Sanchez", sans-serif;
+        width: 100%;
+        border: none;
+        color: $teal;
+        text-align: center;
+        &::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: $teal;
+        }
+        &::-moz-placeholder {
+            /* Firefox 19+ */
+            color: $teal;
+        }
+        &:-ms-input-placeholder {
+            /* IE 10+ */
+            color: $teal;
+        }
+        *:-moz-placeholder {
+            /* Firefox 18- */
+            color: $teal;
+        }
+    }
+}

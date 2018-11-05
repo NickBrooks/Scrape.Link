@@ -1,0 +1,67 @@
+$white: #fff;
+$black: #424242;
+$faded: #999;
+$pink: #ff0b6b;
+$orange: #ff7043;
+$teal: #01c8a9;
+$dark-teal: #00897b;
+$indigo: #0077ff;
+$dark-indigo: #303f9f;
+$purple: #6941b1;
+$grape: #b01b5d;
+$lime: #00e676;
+.white {
+  color: $white;
+}
+
+.black {
+  color: $black;
+}
+
+.pink {
+  color: $pink;
+}
+
+.bg-pink {
+  background-color: $pink;
+}
+
+.orange {
+  color: $orange;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.teal {
+  color: $teal;
+}
+
+.bg-teal {
+  background-color: $teal;
+}
+
+.indigo {
+  color: $indigo;
+}
+
+.bg-indigo {
+  background-color: $indigo;
+}
+
+.purple {
+  color: $purple;
+}
+
+.bg-purple {
+  background-color: $purple;
+}
+
+.grape {
+  color: $grape;
+}
+
+.bg-grape {
+  background-color: $grape;
+}
