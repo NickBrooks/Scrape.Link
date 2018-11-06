@@ -12,14 +12,19 @@
 <body>
   <div class="scraper pt-30 pb-30">
     <div class="container">
-      <h1>scrape.link</h1>
+      <h1>🔪 scrape.link 🔗</h1>
     </div>
     <div class="container mb-20">
       <p>A link is scraped once, then cached for speedy returns in future.</p>
     </div>
-    <div class="container mb-20">
-      <input type="url" pattern="https://.*" name="scrapeUrl" placeholder="https://scrape.link" />
-    </div>
-  </div>
+    <form id="urlForm" autocomplete="off">
+      <div class="container mb-40">
+        <input type="url" id="urlInput" pattern="https://.*" name="scrape-url" placeholder="https://scrape.link"
+          autocomplete="off" />
+      </div>
+      <div class="container mb-20">
+        <button type="submit">
+      </div>
+    </form>
   </div>
 </body>
