@@ -1,51 +1,56 @@
-const glob = require('glob');
-const path = require('path');
+const glob = require("glob");
+const path = require("path");
 
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackInlineSourcePlugin = require("html-webpack-inline-source-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const generateHTMLPlugins = () =>
-  glob.sync('./src/**/*.html').map(dir =>
-    new HTMLWebpackPlugin({
-      filename: path.basename(dir), // Output
-      template: dir, // Input
-    }));
+  glob.sync("./src/**/*.html").map(
+    dir =>
+      new HTMLWebpackPlugin({
+        filename: path.basename(dir), // Output
+        template: dir // Input
+      })
+  );
 
 module.exports = {
   node: {
-    fs: 'empty',
+    fs: "empty"
   },
-  entry: ['./src/js/app.js', './src/style/main.scss'],
+  entry: ["./src/js/app.js", "./src/style/main.scss"],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "app.bundle.js"
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: "babel-loader"
       },
       {
         test: /\.(sass|scss)$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       },
       {
         test: /\.html$/,
-        loader: 'raw-loader',
-      },
-    ],
+        loader: "raw-loader"
+      }
+    ]
   },
   plugins: [
-    new CopyWebpackPlugin([{
-      from: './src/static/',
-      to: './static/',
-    }]),
     ...generateHTMLPlugins(),
+    new HtmlWebpackPlugin({
+      template: "src/index.html",
+      inlineSource: ".(js|css)$" // embed all javascript and css inline
+    }),
+    new HtmlWebpackInlineSourcePlugin()
   ],
   stats: {
-    colors: true,
+    colors: true
   },
-  devtool: 'source-map',
+  devtool: "source-map"
 };
