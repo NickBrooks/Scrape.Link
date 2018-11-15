@@ -59,3 +59,4 @@ typings/
 
 # gitignore dist folder
 dist
+yarn.lock

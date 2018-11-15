@@ -1,6 +1,10 @@
+const jsonMarkup = require("json-markup");
+
 if (module.hot) {
   module.hot.accept();
 }
+
+let scrapeJsonElement = document.getElementById("scrape-json");
 
 document.addEventListener("DOMContentLoaded", function() {
   preventUrlSpaces(document.querySelector("#urlInput"));
@@ -20,8 +24,12 @@ function onSubmitUrl(urlForm) {
     fetch("https://api.scrape.link/scrape", {
       method: "POST",
       body: JSON.stringify({ url: urlInput.value })
-    }).then(res => {
-      console.log(res);
-    });
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(json => {
+         scrapeJsonElement.innerHTML = jsonMarkup(json);
+      });
   });
 }

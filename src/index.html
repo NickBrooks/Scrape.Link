@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A simple web scraping API: scrape.link</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Work+Sans"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A simple web scraping API: scrape.link</title>
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-</head>
-
-<body>
-  <div class="scraper pt-30 pb-30">
-    <div class="container">
-      <h1>🔪 scrape.link 🔗</h1>
-    </div>
-    <div class="container mb-20">
-      <p>A link is scraped once, then cached for speedy returns in future.</p>
-    </div>
-    <form id="urlForm" autocomplete="off">
-      <div class="container mb-40">
-        <input type="text" id="urlInput" name="scrape-url" placeholder="https://scrape.link 🔗" autocomplete="off" />
-      </div>
+  <body>
+    <div class="scraper pt-30 pb-30">
+      <div class="container"><h1>🔪 scrape.link 🔗</h1></div>
       <div class="container mb-20">
-        <button type="submit"></button>
+        <p>A link is scraped once, then cached for speedy returns in future.</p>
       </div>
-    </form>
-  </div>
-</body>
+      <form id="urlForm" autocomplete="off">
+        <div class="container mb-40">
+          <input
+            type="text"
+            id="urlInput"
+            name="scrape-url"
+            placeholder="https://scrape.link 🔗"
+            autocomplete="off"
+          />
+        </div>
+        <div class="container mb-20"><button type="submit"></button></div>
+      </form>
+    </div>
+    <div class="scrape-result pt-30 pb-30">
+      <div class="container">
+        <div class="scrape-result-header"><h3>Hello</h3></div>
+      </div>
+      <div class="container">
+        <div id="scrape-json" class="scrape-json"></div>
+      </div>
+    </div>
+  </body>
+</html>
