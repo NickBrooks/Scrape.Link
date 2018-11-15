@@ -1,9 +1,11 @@
-const jsonMarkup = require("json-markup");
+import jsonMarkup from "json-markup";
+import createCard from "./createCard";
 
 if (module.hot) {
   module.hot.accept();
 }
 
+let scrapeCardElement = document.getElementById("scrape-card");
 let scrapeJsonElement = document.getElementById("scrape-json");
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -28,8 +30,9 @@ function onSubmitUrl(urlForm) {
       .then(res => {
         return res.json();
       })
-      .then(json => {
-         scrapeJsonElement.innerHTML = jsonMarkup(json);
+      .then(link => {
+        scrapeCardElement.appendChild(createCard(link));
+        scrapeJsonElement.innerHTML = jsonMarkup(link);
       });
   });
 }

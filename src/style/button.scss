@@ -1,58 +1,60 @@
 button {
-    outline: none;
-    font-family: "Sanchez", sans-serif;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background: linear-gradient(65deg, $nephritis 0, $emerland 100%);
-    border: 2px solid $lime;
-    color: $white;
-    font: {
-        size: 1.3em;
-    }
-    cursor: pointer;
-    &:hover {
-        background: $lime;
-    }
-    &:active {
-        letter-spacing: 2px;
-    }
-    &:after {
-        content: "🔪 Scrape";
-    }
+  outline: none;
+  font-family: "Cabin", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(65deg, $nephritis 0, $emerland 100%);
+  border: 2px solid $lime;
+  box-shadow: $box-shadow;
+  color: $white;
+  font: {
+    size: 1.3em;
+  }
+  cursor: pointer;
+  &:hover {
+    background: $lime;
+  }
+  &:active {
+    letter-spacing: 2px;
+  }
+  &:after {
+    content: "🔪 Scrape";
+  }
 }
 
 .onclic {
-    width: 40px;
-    border-color: $faded;
-    border-width: 3px;
-    font-size: 0;
-    border-left-color: $teal;
-    animation: rotating 2s 0.25s linear infinite;
-    &:after {
-        content: "";
-    }
-    &:hover {
-        color: $teal;
-        background: white;
-    }
+  width: 40px;
+  border-color: $faded;
+  border-width: 3px;
+  font-size: 0;
+  border-left-color: $teal;
+  animation: rotating 2s 0.25s linear infinite;
+  &:after {
+    content: "";
+  }
+  &:hover {
+    color: $teal;
+    background: white;
+  }
 }
 
 .validate {
-    font-size: 13px;
-    color: white;
-    background: $teal;
-    &:after {
-        font-family: "FontAwesome";
-        content: "\f00c";
-    }
+  font-size: 13px;
+  color: white;
+  background: $teal;
+  &:after {
+    font-family: "FontAwesome";
+    content: "\f00c";
+  }
 }
 
 @keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -8,11 +8,12 @@
         padding: 15px 20px;
         border-radius: $radius;
         font-size: 1.5em;
-        font-family: "Sanchez", sans-serif;
+        font-family: "Cabin", sans-serif;
         width: 100%;
         border: none;
         color: $teal;
         text-align: center;
+        box-shadow: $box-shadow;
         &::-webkit-input-placeholder {
             /* Chrome/Opera/Safari */
             color: $teal;
