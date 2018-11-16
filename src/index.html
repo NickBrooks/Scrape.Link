@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>A simple web scraping API: scrape.link</title>
+    <title>🔪 🔗 scrape.link: A simple web scraping API</title>
     <link
       href="https://fonts.googleapis.com/css?family=Cabin:400,700"
       rel="stylesheet"
@@ -12,7 +12,10 @@
   </head>
 
   <body>
-    <div class="scraper pt-30 pb-30">
+    <div id="scraper" class="scraper pb-40 no-scrape">
+      <div class="container api-link">
+        <p><a href="https://developer.scrape.link">&lt;API /&gt;</a></p>
+      </div>
       <div class="container"><h1>🔪 scrape.link 🔗</h1></div>
       <div class="container mb-20">
         <p>A link is scraped once, then cached for speedy returns in future.</p>
@@ -27,19 +30,19 @@
             autocomplete="off"
           />
         </div>
-        <div class="container mb-20"><button type="submit"></button></div>
+        <div class="container">
+          <button id="scrape-button" type="submit"></button>
+        </div>
       </form>
     </div>
-    <div class="scrape-result pt-30 pb-30">
-      <div class="container">
-        <div class="scrape-result-header"><h3>Hello</h3></div>
+    <div id="scrape-result" class="scrape-result pt-30 pb-20 hidden">
+      <div id="loader" class="loader">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-      <div class="container">
-        <div id="scrape-card"><span></span></div>
-      </div>
-      <div class="container mt-30">
-        <div id="scrape-json" class="scrape-json"></div>
-      </div>
+      <div id="scrape-card" class="container"><span></span></div>
+      <div id="scrape-json" class="container mt-30"><span></span></div>
     </div>
   </body>
 </html>

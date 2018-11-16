@@ -1,4 +1,6 @@
-function createCard(link) {
+import jsonMarkup from "json-markup";
+
+export function createCard(link) {
   // image
   let imageImg = document.createElement("img");
   imageImg.setAttribute("src", link.Image);
@@ -55,4 +57,11 @@ function createCard(link) {
   return cardDiv;
 }
 
-export default createCard;
+export function createJsonResult(link) {
+  console.log("hi");
+  let scrapeJsonDiv = document.createElement("div");
+  scrapeJsonDiv.className = "scrape-json";
+  scrapeJsonDiv.innerHTML = jsonMarkup(link);
+
+  return scrapeJsonDiv;
+}

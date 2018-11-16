@@ -1,6 +1,7 @@
 .scraper {
     background: linear-gradient(65deg, $dark-indigo 0, $indigo 100%);
     color: #fff;
+    transition: 0.2ms;
     h1 {
         margin: 0;
     }
@@ -31,4 +32,10 @@
             color: $teal;
         }
     }
+}
+
+.no-scrape {
+    height: 100vh;
+    padding-bottom: 0px !important;
+    transition: 0.2ms;
 }

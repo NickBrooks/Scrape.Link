@@ -1,0 +1,14 @@
+.api-link {
+    justify-content: right;
+    a {
+        color: $white;
+        background: $teal;
+        padding: 5px 15px;
+        border-radius: $radius;
+        transition: 0.12s;
+        border: 2px solid white;
+        &:hover {
+            background: $dark-teal;
+        }
+    }
+}

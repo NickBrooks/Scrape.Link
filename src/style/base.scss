@@ -1,5 +1,5 @@
 body {
-  font-family: 'Cabin', sans-serif;
+    font-family: 'Cabin', sans-serif;
     margin: 0;
     padding: 0;
     color: $black;
@@ -30,4 +30,8 @@ a {
 
 .light {
     font-weight: normal;
+}
+
+.hidden {
+    display: none;
 }

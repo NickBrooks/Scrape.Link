@@ -1,12 +1,15 @@
-import jsonMarkup from "json-markup";
-import createCard from "./createCard";
+import { createCard, createJsonResult } from "./scrapeResult";
 
 if (module.hot) {
   module.hot.accept();
 }
 
-let scrapeCardElement = document.getElementById("scrape-card");
-let scrapeJsonElement = document.getElementById("scrape-json");
+let scraperElement = document.getElementById("scraper");
+let scrapeButtonElement = document.getElementById("scrape-button");
+let scrapeResultElement = document.getElementById("scrape-result");
+let loaderElement = document.getElementById("loader");
+let scrapeResultCardElement = document.getElementById("scrape-card");
+let scrapeResultJsonElement = document.getElementById("scrape-json");
 
 document.addEventListener("DOMContentLoaded", function() {
   preventUrlSpaces(document.querySelector("#urlInput"));
@@ -23,6 +26,16 @@ function onSubmitUrl(urlForm) {
   urlForm.addEventListener("submit", e => {
     e.preventDefault();
     const urlInput = document.querySelector("#urlInput");
+    if (!urlInput.value) {
+      return;
+    }
+
+    // add loading classes
+    scraperElement.classList.remove("no-scrape");
+    scrapeButtonElement.classList.add("hidden");
+    scrapeResultElement.classList.remove("hidden");
+    loaderElement.classList.remove("hidden");
+
     fetch("https://api.scrape.link/scrape", {
       method: "POST",
       body: JSON.stringify({ url: urlInput.value })
@@ -31,9 +44,15 @@ function onSubmitUrl(urlForm) {
         return res.json();
       })
       .then(link => {
-        scrapeCardElement.innerHTML = "";
-        scrapeCardElement.appendChild(createCard(link));
-        scrapeJsonElement.innerHTML = jsonMarkup(link);
+        // return elements
+        scrapeButtonElement.classList.remove("hidden");
+        loaderElement.classList.add("hidden");
+
+        // and generate the results
+        scrapeResultCardElement.innerHTML = "";
+        scrapeResultJsonElement.innerHTML = "";
+        scrapeResultCardElement.appendChild(createCard(link));
+        scrapeResultJsonElement.appendChild(createJsonResult(link));
       });
   });
 }
