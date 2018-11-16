@@ -1,10 +1,13 @@
+import isUrl from "is-url";
 import { createCard, createJsonResult } from "./scrapeResult";
 
 if (module.hot) {
   module.hot.accept();
 }
 
+// element selectors
 let scraperElement = document.getElementById("scraper");
+let invalidUrlElement = document.getElementById("valid-url");
 let scrapeButtonElement = document.getElementById("scrape-button");
 let scrapeResultElement = document.getElementById("scrape-result");
 let loaderElement = document.getElementById("loader");
@@ -26,11 +29,13 @@ function onSubmitUrl(urlForm) {
   urlForm.addEventListener("submit", e => {
     e.preventDefault();
     const urlInput = document.querySelector("#urlInput");
-    if (!urlInput.value) {
+    if (!urlInput.value || !isUrl(urlInput.value)) {
+      invalidUrlElement.classList.remove("hidden");
       return;
     }
 
     // add loading classes
+    invalidUrlElement.classList.add("hidden");
     scraperElement.classList.remove("no-scrape");
     scrapeButtonElement.classList.add("hidden");
     scrapeResultElement.classList.remove("hidden");
