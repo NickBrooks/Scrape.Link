@@ -40,6 +40,8 @@ function onSubmitUrl(urlForm) {
     scrapeButtonElement.classList.add("hidden");
     scrapeResultElement.classList.remove("hidden");
     loaderElement.classList.remove("hidden");
+    scrapeResultCardElement.innerHTML = "";
+    scrapeResultJsonElement.innerHTML = "";
 
     fetch("https://api.scrape.link/scrape", {
       method: "POST",
@@ -54,8 +56,6 @@ function onSubmitUrl(urlForm) {
         loaderElement.classList.add("hidden");
 
         // and generate the results
-        scrapeResultCardElement.innerHTML = "";
-        scrapeResultJsonElement.innerHTML = "";
         scrapeResultCardElement.appendChild(createCard(link));
         scrapeResultJsonElement.appendChild(createJsonResult(link));
       });

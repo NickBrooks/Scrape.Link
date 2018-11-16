@@ -1,54 +1,55 @@
 .card {
-  color: $black;
-  background: $white;
-  padding: 15px 5px;
-  border-radius: $radius;
-  display: flex;
-  max-width: 700px;
-  width: 100%;
-  border-left: 1em solid transparent;
-  border-right: 1em solid transparent;
-  text-align: left;
-  box-shadow: $box-shadow;
-  .image {
-    margin-right: 15px;
+    color: $black;
+    background: $white;
+    padding: 15px 5px;
+    border-radius: $radius;
     display: flex;
-    align-items: center;
-    img {
-      max-height: 120px;
-      max-width: 200px;
+    max-width: 700px;
+    width: 100%;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    text-align: left;
+    box-shadow: $box-shadow;
+    box-sizing: border-box;
+    .image {
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+        img {
+            max-height: 120px;
+            max-width: 200px;
+        }
     }
-  }
-  .content {
-    overflow: hidden;
-  }
-  .author {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    img {
-      border-radius: 50%;
-      height: 32px;
-      width: 32px;
-      margin-right: 5px;
+    .content {
+        overflow: hidden;
     }
-  }
-  .title {
-    max-width: 100%;
-    h1 {
-      color: $indigo;
-      margin: 5px 0;
-      font-size: 20px;
-      font-weight: bold;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+    .author {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        img {
+            border-radius: 50%;
+            height: 32px;
+            width: 32px;
+            margin-right: 5px;
+        }
     }
-  }
-  .description p {
-    font-size: 14px;
-    color: $faded;
-    margin: 0;
-    max-lines: 2;
-  }
+    .title {
+        max-width: 100%;
+        h1 {
+            color: $indigo;
+            margin: 5px 0;
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+    .description p {
+        font-size: 14px;
+        color: $faded;
+        margin: 0;
+        max-lines: 2;
+    }
 }

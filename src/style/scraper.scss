@@ -15,6 +15,7 @@
         color: $teal;
         text-align: center;
         box-shadow: $box-shadow;
+        box-sizing: border-box;
         &::-webkit-input-placeholder {
             /* Chrome/Opera/Safari */
             color: $teal;
