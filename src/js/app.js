@@ -31,6 +31,7 @@ function onSubmitUrl(urlForm) {
         return res.json();
       })
       .then(link => {
+        scrapeCardElement.innerHTML = "";
         scrapeCardElement.appendChild(createCard(link));
         scrapeJsonElement.innerHTML = jsonMarkup(link);
       });
