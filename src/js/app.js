@@ -6,6 +6,8 @@ if (module.hot) {
 }
 
 // element selectors
+var tempKeyTag = document.querySelector('meta[name~="x-temp-key"]');
+var tempKey = tempKeyTag && tempKeyTag.getAttribute("content");
 let scraperElement = document.getElementById("scraper");
 let errorMsgElement = document.getElementById("error-message");
 let scrapeButtonElement = document.getElementById("scrape-button");
@@ -28,7 +30,10 @@ function preventUrlSpaces(urlInput) {
 function fetchScrape(url) {
   return fetch("https://api.scrape.link/scrape", {
     method: "POST",
-    body: JSON.stringify({ url })
+    body: JSON.stringify({ url }),
+    headers: {
+      "x-temp-key": tempKey
+    }
   }).then(res => {
     if (res.ok) {
       return res.json();

@@ -58,7 +58,6 @@ export function createCard(link) {
 }
 
 export function createJsonResult(link) {
-  console.log("hi");
   let scrapeJsonDiv = document.createElement("div");
   scrapeJsonDiv.className = "scrape-json";
   scrapeJsonDiv.innerHTML = jsonMarkup(link);
